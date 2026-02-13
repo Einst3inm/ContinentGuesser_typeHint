@@ -37,7 +37,7 @@ Europe = ["Albania", "Andorra", "Armenia", "Austria", "Azerbaijan", "Belarus", "
 Australia = ["Australia", "Fiji", "Kiribati", "Marshall Islands", "Micronesia", "Nauru", "New Zealand", "Palau", "Papua New Guinea", "Samoa", "Solomon Islands", 
              "Tonga", "Tuvalu", "Vanuatu", "Cook Islands", "Tokelau", "Niue", "Norfolk Island"]
 
-#The source of these country lists is: https://www.countries-ofthe-world.com/countries-of-asia.html
+#The source of these country lists is https://www.countries-ofthe-world.com/countries-of-asia.html
 
 import random
 
