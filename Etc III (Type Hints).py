@@ -34,26 +34,43 @@ def continentCheck(country: str):
     Australia = ["Australia", "New Zealand", "Fiji", "Papua New Guinea"]
 
     if country in America:
-        print( country, "is in America")
+        #print( country, "is in America")
+        return "America"
     elif country in Africa:
-        print( country, "is in Africa") 
+        #print( country, "is in Africa") 
+        return "Africa"
     elif country in Asia:
-        print( country, "is in Asia")
+        #print( country, "is in Asia")
+        return "Asia"
     elif country in Europe:
-        print( country, "is in Europe")
+        #print( country, "is in Europe")
+        return "Europe"
     elif country in Australia:
-        print( country, "is in Australia")
+        #print( country, "is in Australia")
+        return "Australia"
     else:
-        print("Sorry, ", country, "does not seem to exist in any continent known to me.") 
+        #print("Sorry, ", country, "does not seem to exist in any continent known to me.") 
+        return "Unknown"
+
+def checkGuess(guessedContinent: str, comparingCountry: str):
+    gContinent = guessedContinent.strip().title()  # Remove leading/trailing spaces and capitalize each word
+    comCountry = comparingCountry.strip().title()  # Remove leading/trailing spaces and capitalize each word
+    
+    realContinent = continentCheck(comCountry)
+
+    if gContinent == realContinent:
+        return "Correct"
+    else:
+        return "Wrong"
 
 world = America + Africa + Asia + Europe + Australia
 randomCountry = random.choice(world)
 
 continent = input("Which continent is " + randomCountry + " in? ")
+result = checkGuess(continent, randomCountry)
 continentCheck(randomCountry)
+print(randomCountry, "is in", continentCheck(randomCountry))
+print("You guessed",result)
 
-#This code is well and goot but it does not yet:
-#1. Check if the user's answer is correct or not, it just tells them which continent the country is in
-#2. It does not ignore capitalizations and spaces in the user's answer
-
-#But it does use "type hints", I just need to make that more explicit
+#This code is well and good
+#It just needs to be pythonized some more
