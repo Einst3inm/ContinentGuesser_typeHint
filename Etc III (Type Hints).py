@@ -16,7 +16,7 @@ North_America = ["American Samoa", "Northern Mariana Islands", "Wake Island", "G
                 "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Trinidad and Tobago", "United States of America", "US Virgin Islands",
                 "Puerto Rico", "Navassa Island"]
 South_America = ["Argentina", "Bolivia", "Brazil", "Chile", "Colombia", "Ecuador", "Guyana", "Paraguay", "Peru", "Suriname", "Uruguay", "Venezuela"]
-America = North_America + South_America
+#America = North_America + South_America
 Africa = ["Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Cabo Verde", "Cameroon", "Central African Republic", "Chad", "Comoros", 
           "Democratic Republic of Congo", "Republic of Congo", "Cote d'Ivoire", "Djibouti", "Egypt", "Equatorial Guinea", "Eritrea", "Eswatini", "Ethiopia", "Gabon", 
           "Gambia", "Ghana", "Guinea", "Guinea-Bissau", "Kenya", "Lesotho", "Liberia", "Libya", "Madagascar", "Malawi", "Mali", "Mauritania", "Mauritius", "Morocco", 
@@ -44,7 +44,7 @@ import random
 def continentCheck(country: str):
     country = country.strip().title()  #Remove leading/trailing spaces and capitalize each word
 
-    if country in America:
+    if country in North_America or country in South_America:
         return "America"
     elif country in Africa:
         return "Africa"
@@ -71,7 +71,7 @@ def checkGuess(guessedContinent: str, comparingCountry: str):
     else:
         return "Wrong"
 
-worldCountries = America + Africa + Asia + Europe + Australia
+worldCountries = North_America + South_America + Africa + Asia + Europe + Australia
 randomCountry = random.choice(worldCountries)
 
 continent = input("Which continent is " + randomCountry + " in? ")
